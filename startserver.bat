@@ -1,0 +1,1 @@
+start D:\LSLRP\run.cmd +exec LSLRPserver.cfg
