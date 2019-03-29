@@ -159,7 +159,7 @@ function ListVehiclesMenu()
 				menu.close()
 				SpawnVehicle(data.current.value.vehicle)
 			else
-				TriggerEvent('esx:showNotification', 'Votre véhicule est a la fourriere')
+				TriggerEvent('esx:showNotification', 'Your vehicle at the Impound')
 			end
 		end,
 		function(data, menu)
@@ -304,7 +304,7 @@ AddEventHandler('eden_garage:hasEnteredMarker', function(zone)
 	
 	if zone == 'pound' then
 		CurrentAction     = 'pound_action_menu'
-		CurrentActionMsg  = "Press ~INPUT_PICKUP~ to access the pound"
+		CurrentActionMsg  = "Press ~INPUT_PICKUP~ to access the Impound"
 		CurrentActionData = {}
 	end
 end)
@@ -327,7 +327,7 @@ function ReturnVehicleMenu()
     		local vehicleName = GetDisplayNameFromVehicleModel(hashVehicule)
     		local labelvehicle
 
-    		labelvehicle = vehicleName..': Sortie'
+    		labelvehicle = vehicleName..': Exit'
     	
 			table.insert(elements, {label =labelvehicle , value = v})
 			

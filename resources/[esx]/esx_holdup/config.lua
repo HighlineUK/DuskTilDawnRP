@@ -16,42 +16,42 @@ Config.GiveBlackMoney = false -- give black money? If disabled it will give cash
 Stores = {
 	["paleto_twentyfourseven"] = {
 		position = { x = 1736.32, y = 6419.47, z = 35.03 },
-		reward = math.random(5000, 35000),
+		reward = math.random(2000, 7000),
 		nameOfStore = "24/7. (Paleto Bay)",
-		secondsRemaining = 350, -- seconds
+		secondsRemaining = 180, -- seconds
 		lastRobbed = 0
 	},
 	["sandyshores_twentyfoursever"] = {
 		position = { x = 1961.24, y = 3749.46, z = 32.34 },
-		reward = math.random(3000, 20000),
+		reward = math.random(3000, 5000),
 		nameOfStore = "24/7. (Sandy Shores)",
-		secondsRemaining = 200, -- seconds
+		secondsRemaining = 160, -- seconds
 		lastRobbed = 0
 	},
 	["littleseoul_twentyfourseven"] = {
 		position = { x = -709.17, y = -904.21, z = 19.21 },
-		reward = math.random(3000, 20000),
+		reward = math.random(1000, 8000),
 		nameOfStore = "24/7. (Little Seoul)",
 		secondsRemaining = 200, -- seconds
 		lastRobbed = 0
 	},
 	["bar_one"] = {
 		position = { x = 1990.57, y = 3044.95, z = 47.21 },
-		reward = math.random(5000, 35000),
+		reward = math.random(5000, 10000),
 		nameOfStore = "Yellow Jack. (Sandy Shores)",
 		secondsRemaining = 300, -- seconds
 		lastRobbed = 0
 	},
 	["ocean_liquor"] = {
 		position = { x = -2959.33, y = 388.21, z = 14.00 },
-		reward = math.random(3000, 30000),
+		reward = math.random(3000, 12000),
 		nameOfStore = "Robs Liquor. (Great Ocean Highway)",
 		secondsRemaining = 200, -- seconds
 		lastRobbed = 0
 	},
 	["rancho_liquor"] = {
 		position = { x = 1126.80, y = -980.40, z = 45.41 },
-		reward = math.random(3000, 50000),
+		reward = math.random(3000, 15000),
 		nameOfStore = "Robs Liquor. (El Rancho Blvd)",
 		secondsRemaining = 200, -- seconds
 		lastRobbed = 0
@@ -65,7 +65,7 @@ Stores = {
 	},
 	["grove_ltd"] = {
 		position = { x = -43.40, y = -1749.20, z = 29.42 },
-		reward = math.random(3000, 15000),
+		reward = math.random(3000, 17000),
 		nameOfStore = "LTD Gasoline. (Grove Street)",
 		secondsRemaining = 200, -- seconds
 		lastRobbed = 0
