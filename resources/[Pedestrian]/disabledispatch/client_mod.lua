@@ -14,7 +14,7 @@ local dispatchTypes =
 	DT_SwatHelicopter = { ID = 12, ACTIVE = false },
 	DT_PoliceBoat = { ID = 13, ACTIVE = false },
 	DT_ArmyVehicle = { ID = 14, ACTIVE = false },
-	DT_BikerBackup = { ID = 15, ACTIVE = false }
+	DT_BikerBackup = { ID = 15, ACTIVE = false },
 }
 
 Citizen.CreateThread(function()
