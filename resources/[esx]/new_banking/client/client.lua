@@ -15,7 +15,7 @@ local banks = {
   {name="Bank", id=108, x=-351.534, y=-49.529, z=49.042},
   {name="Bank", id=108, x=241.727, y=220.706, z=106.286},
   {name="Bank", id=108, x=1175.0643310547, y=2706.6435546875, z=38.094036102295}
-}	
+}
 
 local atms = {
   {name="ATM", id=277, x=-386.733, y=6045.953, z=31.501},
@@ -100,10 +100,10 @@ local atms = {
 --==           Base ESX Threading              ==
 --===============================================
 Citizen.CreateThread(function()
-  while ESX == nil do
-    TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-    Citizen.Wait(0)
-  end
+	while ESX == nil do
+		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+		Citizen.Wait(0)
+	end
 end)
 
 
@@ -115,11 +115,11 @@ end)
 --===============================================
 if bankMenu then
 	Citizen.CreateThread(function()
-  while true do
-    Wait(0)
+	while true do
+		Wait(0)
 	if nearBank() or nearATM() then
-			DisplayHelpText("Press ~INPUT_PICKUP~ to access the bank ~b~")
-	
+			DisplayHelpText("Press ~INPUT_PICKUP~ to access account ~b~")
+
 		if IsControlJustPressed(1, 38) then
 			inMenu = true
 			SetNuiFocus(true, true)
@@ -128,14 +128,14 @@ if bankMenu then
 			local ped = GetPlayerPed(-1)
 		end
 	end
-        
-    if IsControlJustPressed(1, 322) then
-	  inMenu = false
-      SetNuiFocus(false, false)
-      SendNUIMessage({type = 'close'})
-    end
+
+		if IsControlJustPressed(1, 322) then
+		inMenu = false
+			SetNuiFocus(false, false)
+			SendNUIMessage({type = 'close'})
+		end
 	end
-  end)
+	end)
 end
 
 
@@ -147,7 +147,25 @@ Citizen.CreateThread(function()
 	  for k,v in ipairs(banks)do
 		local blip = AddBlipForCoord(v.x, v.y, v.z)
 		SetBlipSprite(blip, v.id)
-		SetBlipScale(blip, 1.0)
+		SetBlipDisplay(blip, 4)
+		SetBlipScale  (blip, 0.9)
+		SetBlipColour (blip, 2)
+		SetBlipAsShortRange(blip, true)
+		BeginTextCommandSetBlipName("STRING")
+		AddTextComponentString(tostring(v.name))
+		EndTextCommandSetBlipName(blip)
+	  end
+	end
+end)
+
+Citizen.CreateThread(function()
+	if showblips then
+	  for k,v in ipairs(atms)do
+		local blip = AddBlipForCoord(v.x, v.y, v.z)
+		SetBlipSprite(blip, v.id)
+		SetBlipDisplay(blip, 4)
+		SetBlipScale  (blip, 0.9)
+		SetBlipColour (blip, 2)
 		SetBlipAsShortRange(blip, true)
 		BeginTextCommandSetBlipName("STRING")
 		AddTextComponentString(tostring(v.name))
@@ -157,7 +175,6 @@ Citizen.CreateThread(function()
 end)
 
 
-
 --===============================================
 --==           Deposit Event                   ==
 --===============================================
@@ -165,7 +182,7 @@ RegisterNetEvent('currentbalance1')
 AddEventHandler('currentbalance1', function(balance)
 	local id = PlayerId()
 	local playerName = GetPlayerName(id)
-	
+
 	SendNUIMessage({
 		type = "balanceHUD",
 		balance = balance,
@@ -177,6 +194,7 @@ end)
 --===============================================
 RegisterNUICallback('deposit', function(data)
 	TriggerServerEvent('bank:deposit', tonumber(data.amount))
+	TriggerServerEvent('bank:balance')
 end)
 
 --===============================================
@@ -184,6 +202,7 @@ end)
 --===============================================
 RegisterNUICallback('withdrawl', function(data)
 	TriggerServerEvent('bank:withdraw', tonumber(data.amountw))
+	TriggerServerEvent('bank:balance')
 end)
 
 --===============================================
@@ -195,9 +214,7 @@ end)
 
 RegisterNetEvent('balance:back')
 AddEventHandler('balance:back', function(balance)
-
 	SendNUIMessage({type = 'balanceReturn', bal = balance})
-
 end)
 
 
@@ -206,19 +223,24 @@ end)
 --===============================================
 RegisterNUICallback('transfer', function(data)
 	TriggerServerEvent('bank:transfer', data.to, data.amountt)
-	
+	TriggerServerEvent('bank:balance')
 end)
 
-
-
+--===============================================
+--==         Result   Event                    ==
+--===============================================
+RegisterNetEvent('bank:result')
+AddEventHandler('bank:result', function(type, message)
+	SendNUIMessage({type = 'result', m = message, t = type})
+end)
 
 --===============================================
 --==               NUIFocusoff                 ==
 --===============================================
 RegisterNUICallback('NUIFocusOff', function()
-  inMenu = false
-  SetNuiFocus(false, false)
-  SendNUIMessage({type = 'closeAll'})
+	inMenu = false
+	SetNuiFocus(false, false)
+	SendNUIMessage({type = 'closeAll'})
 end)
 
 
@@ -228,10 +250,10 @@ end)
 function nearBank()
 	local player = GetPlayerPed(-1)
 	local playerloc = GetEntityCoords(player, 0)
-	
+
 	for _, search in pairs(banks) do
 		local distance = GetDistanceBetweenCoords(search.x, search.y, search.z, playerloc['x'], playerloc['y'], playerloc['z'], true)
-		
+
 		if distance <= 3 then
 			return true
 		end
@@ -241,11 +263,11 @@ end
 function nearATM()
 	local player = GetPlayerPed(-1)
 	local playerloc = GetEntityCoords(player, 0)
-	
+
 	for _, search in pairs(atms) do
 		local distance = GetDistanceBetweenCoords(search.x, search.y, search.z, playerloc['x'], playerloc['y'], playerloc['z'], true)
-		
-		if distance <= 3 then
+
+		if distance <= 2 then
 			return true
 		end
 	end

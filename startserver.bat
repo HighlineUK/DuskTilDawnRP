@@ -1,1 +1,1 @@
-start D:\LSLRP\run.cmd +exec LSLRPserver.cfg
+start D:\DTDRP-Live\DuskTilDawnRP\run.cmd +exec DTDRPserver.cfg
