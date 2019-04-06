@@ -19,12 +19,12 @@ Config.BleedoutTimer              = 10 * minute -- Time til the player bleeds ou
 Config.EnablePlayerManagement     = true
 
 Config.RemoveWeaponsAfterRPDeath  = true
-Config.RemoveCashAfterRPDeath     = true
+Config.RemoveCashAfterRPDeath     = false
 Config.RemoveItemsAfterRPDeath    = true
 
 -- Let the player pay for respawning early, only if he can afford it.
-Config.EarlyRespawnFine           = false
-Config.EarlyRespawnFineAmount     = 5000
+Config.EarlyRespawnFine           = true
+Config.EarlyRespawnFineAmount     = 500
 
 Config.RespawnPoint = { coords = vector3(341.0, -1397.3, 32.5), heading = 48.5 }
 

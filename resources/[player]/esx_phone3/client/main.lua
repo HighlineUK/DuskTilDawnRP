@@ -125,7 +125,7 @@ end)
 RegisterNetEvent('esx_phone:onMessage')
 AddEventHandler('esx_phone:onMessage', function(phoneNumber, message, position, anon, job, dispatchRequestId)
 	if job == 'player' then
-		ESX.ShowNotification('~b~Nouveau message~s~ : ' .. message)
+		ESX.ShowNotification('~b~New Message~s~ : ' .. message)
 	else
 		ESX.ShowNotification('~b~' .. job .. ': ~s~' .. message)
 	end
@@ -147,7 +147,7 @@ AddEventHandler('esx_phone:onMessage', function(phoneNumber, message, position, 
 
 	if dispatchRequestId then
 		CurrentAction            = 'dispatch'
-		CurrentActionMsg         = job .. ' - Appuyez sur ~INPUT_CONTEXT~ pour prendre l\'appel'
+		CurrentActionMsg         = job .. ' - Press ~INPUT_CONTEXT~ to take call'
 		CurrentDispatchRequestId = dispatchRequestId
 
 		CurrentActionData = {
@@ -243,7 +243,7 @@ end)
 
 RegisterNUICallback('activate_gps', function(data)
 	SetNewWaypoint(data.x, data.y)
-	ESX.ShowNotification('Position entrée dans le GPS')
+	ESX.ShowNotification('Position entered in the GPS')
 end)
 
 RegisterNUICallback('start_call', function(data, cb)
@@ -281,7 +281,7 @@ RegisterNUICallback('send', function(data)
 		z = coords.z
 	})
 
-	ESX.ShowNotification('Message envoyé')
+	ESX.ShowNotification('Message sent')
 end)
 
 RegisterNUICallback('add_contact', function(data, cb)
@@ -335,7 +335,7 @@ RegisterNUICallback('bank_transfer', function(data, cb)
 	if amount ~= nil then
 		TriggerServerEvent('esx_phone:bankTransfer', data.player, amount)
 	else
-		ESX.ShowNotification('Montant invalide')
+		ESX.ShowNotification('Invalid amount')
 	end
 end)
 
