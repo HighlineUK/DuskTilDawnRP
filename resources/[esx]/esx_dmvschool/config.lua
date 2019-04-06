@@ -18,9 +18,9 @@ Config.VehicleModels = {
 }
 
 Config.SpeedLimits = {
-	residence = 40,
-	town      = 50,
-	freeway   = 80
+	residence = 64,
+	town      = 80,
+	freeway   = 128
 }
 
 Config.Zones = {
