@@ -165,18 +165,21 @@ Config.AuthorizedVehicles = {
 	},
 
 	lieutenant = {
-		{ model = 'police2', label = 'Police Charger14', price = 10 },
+		--{ model = 'police2', label = 'Police Charger14', price = 10 },
+		{ model = 'polschafter3', label = 'Police ShafterUC', price = 10 },
 		{ model = 'policeb', label = 'Police Bike', price = 10 }
 	},
 
 	cheif = {
-		{ model = 'police2', label = 'Police Charger14', price = 10 },
+		--{ model = 'police2', label = 'Police Charger14', price = 10 },
+		{ model = 'polschafter3', label = 'Police ShafterUC', price = 10 },
 		{ model = 'policeb', label = 'Police Bike', price = 10 }
 		
 	},
 
 	boss = {
-		{ model = 'police2', label = 'Police Charger14', price = 10 },
+		--{ model = 'police2', label = 'Police Charger14', price = 10 },
+		{ model = 'polschafter3', label = 'Police ShafterUC', price = 10 },
 		{ model = 'policeb', label = 'Police Bike', price = 10 }
 
 	}
