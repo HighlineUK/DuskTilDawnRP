@@ -1,0 +1,19 @@
+USE `essentialmode`;
+
+CREATE TABLE `shops` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+	`store` varchar(100) NOT NULL,
+	`item` varchar(100) NOT NULL,
+	`price` int(11) NOT NULL,
+
+	PRIMARY KEY (`id`)
+);
+
+INSERT INTO `shops` (store, item, price) VALUES
+	('TwentyFourSeven','Bread',30),
+	('TwentyFourSeven','Water',15),
+	('RobsLiquor','Bread',30),
+	('RobsLiquor','Water',15),
+	('LTDgasoline','Bread',30),
+	('LTDgasoline','Water',15)
+;
