@@ -2,7 +2,7 @@ Config = {}
 
 Config.Locale = 'en'
 
-Config.Price = 100
+Config.Price = 250
 
 Config.EnableControls = true
 
@@ -19,12 +19,12 @@ Config.ShopsBlips = {
 		Pos = nil,
 		Blip = nil
 	},
-	--Mask = {
-	--	Pos = { 
-	--		{ x = -1338.129, y = -1278.200, z = 3.872 },
-	--	},
-	--	Blip = { sprite = 362, color = 2 }
-	--},
+	Mask = {
+		Pos = { 
+			{ x = -1338.129, y = -1278.200, z = 3.872 },
+		},
+		Blip = { sprite = 362, color = 2 }
+	},
 	Helmet = {
 		Pos = nil,
 		Blip = nil
@@ -56,11 +56,11 @@ Config.Zones = {
 		
 	},
 	
-	--Mask = {
-	--	Pos = {
-	--		{x = -1338.129, y = -1278.200, z = 3.872},
-	--	}
-	--},
+	Mask = {
+		Pos = {
+			{x = -1338.129, y = -1278.200, z = 3.872},
+		}
+	},
 	
 	Helmet = {
 		Pos = {
