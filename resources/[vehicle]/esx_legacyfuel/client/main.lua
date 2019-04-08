@@ -96,7 +96,7 @@ Citizen.CreateThread(function()
 				elseif IsFueling then
 					local position = GetEntityCoords(vehicle)
 
-					DrawText3Ds(pumpLoc['x'], pumpLoc['y'], pumpLoc['z'], "Press ~g~G ~w~to cancel the fueling of your vehicle. $~r~" .. price .. " ~w~+  tax")
+					DrawText3Ds(pumpLoc['x'], pumpLoc['y'], pumpLoc['z'], "Press ~g~G ~w~to stop fueling of your vehicle. $~r~" .. price .. " ~w~+  tax")
 					DrawText3Ds(position.x, position.y, position.z + 0.5, fuel .. "%")
 					
 					DisableControlAction(0, 0, true) -- Changing view (V)
@@ -133,7 +133,7 @@ Citizen.CreateThread(function()
 						IsFueling = false
 					end
 				elseif fuel > 95.0 then
-					DrawText3Ds(pumpLoc['x'], pumpLoc['y'], pumpLoc['z'], "Vehicle is too filled with gas to be fueled")
+					DrawText3Ds(pumpLoc['x'], pumpLoc['y'], pumpLoc['z'], "Vehicle is full with Gas")
 				elseif cash <= 0 then
 					DrawText3Ds(pumpLoc['x'], pumpLoc['y'], pumpLoc['z'], "You currently don't have enough money on you to buy fuel with")
 				else

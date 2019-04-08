@@ -37,7 +37,7 @@
 #Dashcam_Unitnumber {
     position: absolute;
     right: 10px;
-    top: 30px;
+    top: 310px;
     color: white;
     font-size: 30px;
     font-weight: bold;
@@ -46,7 +46,7 @@
 #Dashcam_Unitname {
     position: absolute;
     right: 10px;
-    top: 80px;
+    top: 360px;
     color: white;
     font-size: 30px;
     font-weight: bold;
@@ -55,7 +55,7 @@
 #Dashcam_Unitspeed {
     position: absolute;
     right: 10px;
-    top: 130px;
+    top: 410px;
     color: white;
     font-size: 30px;
     font-weight: bold;
