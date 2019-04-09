@@ -1,6 +1,7 @@
 ---------------------------------------------------------------------------------------
 -- Edit this table to all the database tables and columns
 -- where identifiers are used (such as users, owned_vehicles, owned_properties etc.)
+-- SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE COLUMN_NAME = 'columnNameHere' -- 'owner' or 'identifier'
 ---------------------------------------------------------------------------------------
 local IdentifierTables = {
     {table = "addon_account_data", column = "owner"},

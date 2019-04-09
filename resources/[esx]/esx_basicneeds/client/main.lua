@@ -39,14 +39,16 @@ end)
 
 AddEventHandler('esx_status:loaded', function(status)
 
+	
 	TriggerEvent('esx_status:registerStatus', 'hunger', 1000000, '#CFAD0F', function(status)
-		return false
+		return false   -- Change to true to show hunger bar | false to hide hunger bar
 	end, function(status)
 		status.remove(100)
 	end)
 
+	
 	TriggerEvent('esx_status:registerStatus', 'thirst', 1000000, '#0C98F1', function(status)
-		return false
+		return false  -- Change to true to show thirst bar | false to hide hunger bar
 	end, function(status)
 		status.remove(75)
 	end)
