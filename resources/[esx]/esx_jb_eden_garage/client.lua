@@ -66,7 +66,7 @@ function refreshBlips()
 		SetBlipColour (blip, Config.BlipPound.Color)
 		SetBlipAsShortRange(blip, true)
 		BeginTextCommandSetBlipName("STRING")
-		AddTextComponentString("fourriere")
+		AddTextComponentString("Impound")
 		EndTextCommandSetBlipName(blip)
 	end
 end
@@ -141,7 +141,7 @@ function ListVehiclesMenu()
     		labelvehicle = vehicleName..': Garage'
     		
     		else
-    		labelvehicle = vehicleName..': Fourriere'
+    		labelvehicle = vehicleName..': Impound'
     		end	
 			table.insert(elements, {label =labelvehicle , value = v})
 			
@@ -159,7 +159,7 @@ function ListVehiclesMenu()
 				menu.close()
 				SpawnVehicle(data.current.value.vehicle)
 			else
-				TriggerEvent('esx:showNotification', 'Your vehicle at the Impound')
+				TriggerEvent('esx:showNotification', 'Your vehicle is at the Impound')
 			end
 		end,
 		function(data, menu)
@@ -175,7 +175,7 @@ function reparation(prix,vehicle,vehicleProps)
 	ESX.UI.Menu.CloseAll()
 
 	local elements = {
-		{label = "Return the Vehicle ("..prix.."$)", value = 'yes'},
+		{label = "Return the Vehicle ($"..prix..")", value = 'yes'}, --yes
 		{label = "See the Mechanic", value = 'no'},
 	}
 	ESX.UI.Menu.Open(
@@ -228,7 +228,7 @@ function StockVehicleMenu()
 				TriggerServerEvent('eden_garage:debug', "Vehicle plate returned to the garage: "  .. vehicleProps.plate)
 				TriggerServerEvent('eden_garage:logging',"Vehicle returned to the garage: " .. engineHealth)
 				if engineHealth < 1000 then
-			        local fraisRep= math.floor((1000 - engineHealth)*100)			      
+			        local fraisRep= math.floor((1000 - engineHealth)*2) -- was 100			      
 			        reparation(fraisRep,vehicle,vehicleProps)
 			    else
 			    	ranger(vehicle,vehicleProps)
