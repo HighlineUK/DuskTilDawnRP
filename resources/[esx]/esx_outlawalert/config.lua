@@ -33,7 +33,7 @@ Config.BlipJackingTime = 10
 Config.BlipJackingRadius = 50.0
 
 -- Show notification when cops steal too?
-Config.ShowCopsMisbehave = true
+Config.ShowCopsMisbehave = false
 
 -- Jobs in this table are considered as cops
 Config.WhitelistedCops = {
