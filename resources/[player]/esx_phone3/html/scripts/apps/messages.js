@@ -129,7 +129,7 @@
 			if ($(elems[i]).data('args').number == number)
 				return $(elems[i]).data('args').name;
 
-		return 'Inconnu #' + number;
+		return 'Unknown #' + number;
 
 	}
 

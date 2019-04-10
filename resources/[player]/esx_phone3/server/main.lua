@@ -281,7 +281,7 @@ AddEventHandler('esx_phone:addPlayerContact', function(phoneNumber, contactName)
 		if result[1] ~= nil then
 
 			if phoneNumber == xPlayer.get('phoneNumber') then
-				TriggerClientEvent('esx:showNotification', _source, 'Vous ne pouvez pas vous ajouter vous-même')
+				TriggerClientEvent('esx:showNotification', _source, 'You cannot add yourself dummy!')
 			else
 
 				local hasAlreadyAdded = false
@@ -295,7 +295,7 @@ AddEventHandler('esx_phone:addPlayerContact', function(phoneNumber, contactName)
 				end
 
 				if hasAlreadyAdded then
-					TriggerClientEvent('esx:showNotification', _source, 'Ce contact est déja dans votre répertoire')
+					TriggerClientEvent('esx:showNotification', _source, 'You blind? That contact is already in')
 				else
 
 					table.insert(contacts, {
@@ -335,7 +335,7 @@ RegisterServerEvent('esx_phone:billCall')
 AddEventHandler('esx_phone:billCall', function(duration)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
-	local amount  = math.floor(duration * 0.34)
+	local amount  = math.floor(duration * 1.00) --- 0.34
 
 	xPlayer.removeAccountMoney('bank', amount)
 
@@ -352,7 +352,7 @@ AddEventHandler('esx_phone:bankTransfer', function(target, amount)
 		xPlayer      .removeAccountMoney('bank', amount)
 		targetXPlayer.addAccountMoney   ('bank', amount)
 
-		TriggerClientEvent('esx:showNotification', _source, 'You have fired ~g~$' .. amount .. '~s~ à ' .. targetXPlayer.name)
+		TriggerClientEvent('esx:showNotification', _source, 'You have transfered ~g~$' .. amount .. '~s~ à ' .. targetXPlayer.name)
 	else
 		TriggerClientEvent('esx:showNotification', _source, 'Invalid Amount')
 	end
