@@ -13,7 +13,7 @@ Config = {
 }
 
 Config.Garages = {
-	Garage_Centre = {	
+	LegionPark = {	----Garage_Centre
 		Pos = {x=215.800, y=-810.057, z=29.727},
 		Size  = {x = 3.0, y = 3.0, z = 1.0},
 		Color = {r = 204, g = 204, b = 0},
@@ -46,7 +46,7 @@ Config.Garages = {
 			Heading=299.42
 		},
 	},
-	Garage_Paleto = {	
+	PaletoParking = {	---Garage_Paleto
 		Pos = {x=105.359, y=6613.586, z=31.3973},
 		Size  = {x = 3.0, y = 3.0, z = 1.0},
 		Color = {r = 204, g = 204, b = 0},
@@ -76,67 +76,67 @@ Config.Garages = {
 			Marker = 1
 		},
 	},
-	Garage_Poissoniers = {	
-		Pos = {x = -1511.6556396484,y = 5009.875,z = 61.800533294678 },
-		Size  = {x = 3.0, y = 3.0, z = 1.0},
-		Color = {r = 204, g = 204, b = 0},
-		Marker = 1,
-		SpawnPoint = {
-			Pos = {x = -1511.6556396484,y = 5009.875,z = 61.800533294678 },
-			Color = {r=0,g=255,b=0},
-			Size  = {x = 3.0, y = 3.0, z = 1.0},
-			Marker = 1
-		},
-		DeletePoint = {
-			Pos = {x = -1524.1857910156,y = 4997.2885742188,z = 61.598690032959 },
-			Color = {r=255,g=0,b=0},
-			Size  = {x = 3.0, y = 3.0, z = 1.0},
-			Marker = 1
-		},
-		MunicipalPoundPoint = {
-			Pos = {x = -2211.8347167969,y = 4241.1069335938,z = 46.61901473999 },
-			Color = {r=25,g=25,b=112},
-			Size  = {x = 3.0, y = 3.0, z = 1.0},
-			Marker = 1
-		},	
-		SpawnMunicipalPoundPoint = {
-			Pos = {x = -2205.4594726563,y = 4247.3603515625,z = 46.639003753662 },
-			Color = {r=0,g=255,b=0},
-			Size  = {x = 3.0, y = 3.0, z = 1.0},
-			Marker = 1
-		},
-	},
-	Garage_SandyShore = {	
-		Pos = {x = 1979.3223876953,y = 3828.7197265625,z = 31.394721984863 },
-		Size  = {x = 3.0, y = 3.0, z = 1.0},
-		Color = {r = 204, g = 204, b = 0},
-		Marker = 1,
-		SpawnPoint = {
-			Pos = {x = 1979.3223876953,y = 3828.7197265625,z = 31.394721984863 },
-			Color = {r=0,g=255,b=0},
-			Size  = {x = 3.0, y = 3.0, z = 1.0},
-			Marker = 1
-		},
-		DeletePoint = {
-			Pos = {x = 1967.4039306641,y = 3821.009765625,z = 31.396926879883 },
-			Color = {r=255,g=0,b=0},
-			Size  = {x = 3.0, y = 3.0, z = 1.0},
-			Marker = 1
-		},
-		MunicipalPoundPoint = {
-			Pos = {x = 1561.6000976563,y = 3522.8583984375,z = 34.789356231689 },
-			Color = {r=25,g=25,b=112},
-			Size  = {x = 3.0, y = 3.0, z = 1.0},
-			Marker = 1
-		},	
-		SpawnMunicipalPoundPoint = {
-			Pos = {x = 1551.8347167969,y = 3518.1003417969,z = 34.988235473633 },
-			Color = {r=0,g=255,b=0},
-			Size  = {x = 3.0, y = 3.0, z = 1.0},
-			Marker = 1
-		},
-	},
-		Garage_Aeroport = {	
+	--Garage_Poissoniers = {	
+		--Pos = {x = -1511.6556396484,y = 5009.875,z = 61.800533294678 },
+		--Size  = {x = 3.0, y = 3.0, z = 1.0},
+		--Color = {r = 204, g = 204, b = 0},
+		--Marker = 1,
+		--SpawnPoint = {
+			--Pos = {x = -1511.6556396484,y = 5009.875,z = 61.800533294678 },
+			--Color = {r=0,g=255,b=0},
+			--Size  = {x = 3.0, y = 3.0, z = 1.0},
+			--Marker = 1
+		--},
+		--DeletePoint = {
+			--Pos = {x = -1524.1857910156,y = 4997.2885742188,z = 61.598690032959 },
+			--Color = {r=255,g=0,b=0},
+			--Size  = {x = 3.0, y = 3.0, z = 1.0},
+			--Marker = 1
+		--},
+		--MunicipalPoundPoint = {
+			--Pos = {x = -2211.8347167969,y = 4241.1069335938,z = 46.61901473999 },
+			--Color = {r=25,g=25,b=112},
+			--Size  = {x = 3.0, y = 3.0, z = 1.0},
+			--Marker = 1
+		--},	
+		--SpawnMunicipalPoundPoint = {
+			--Pos = {x = -2205.4594726563,y = 4247.3603515625,z = 46.639003753662 },
+			--Color = {r=0,g=255,b=0},
+			--Size  = {x = 3.0, y = 3.0, z = 1.0},
+			--Marker = 1
+		--},
+	--},
+	--Garage_SandyShore = {	
+		--Pos = {x = 1979.3223876953,y = 3828.7197265625,z = 31.394721984863 },
+		--Size  = {x = 3.0, y = 3.0, z = 1.0},
+		--Color = {r = 204, g = 204, b = 0},
+		--Marker = 1,
+		--SpawnPoint = {
+			--Pos = {x = 1979.3223876953,y = 3828.7197265625,z = 31.394721984863 },
+			--Color = {r=0,g=255,b=0},
+			--Size  = {x = 3.0, y = 3.0, z = 1.0},
+			--Marker = 1
+		--},
+		--DeletePoint = {
+			--Pos = {x = 1967.4039306641,y = 3821.009765625,z = 31.396926879883 },
+			--Color = {r=255,g=0,b=0},
+			--Size  = {x = 3.0, y = 3.0, z = 1.0},
+			--Marker = 1
+		--},
+		--MunicipalPoundPoint = {
+			--Pos = {x = 1561.6000976563,y = 3522.8583984375,z = 34.789356231689 },
+			--Color = {r=25,g=25,b=112},
+			--Size  = {x = 3.0, y = 3.0, z = 1.0},
+			--Marker = 1
+		--},	
+		--SpawnMunicipalPoundPoint = {
+			--Pos = {x = 1551.8347167969,y = 3518.1003417969,z = 34.988235473633 },
+			--Color = {r=0,g=255,b=0},
+			--Size  = {x = 3.0, y = 3.0, z = 1.0},
+			--Marker = 1
+		--},
+	--},
+		Airpark = {	--- Garage_Aeroport
 		Pos = {x = -977.21661376953,y = -2710.3798828125,z = 12.853487014771 },
 		Size  = {x = 3.0, y = 3.0, z = 1.0},
 		Color = {r = 204, g = 204, b = 0},
