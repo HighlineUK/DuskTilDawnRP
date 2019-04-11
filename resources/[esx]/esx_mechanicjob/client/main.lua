@@ -83,8 +83,8 @@ function OpenMechanicActionsMenu()
 
 	local elements = {
 		{label = _U('vehicle_list'),   value = 'vehicle_list'},
-		{label = _U('work_wear'),      value = 'cloakroom'},
-		{label = _U('civ_wear'),       value = 'cloakroom2'},
+		--{label = _U('Work_wear'),      value = 'cloakroom'},
+		--{label = _U('Civ_wear'),       value = 'cloakroom2'},
 		{label = _U('deposit_stock'),  value = 'put_stock'},
 		{label = _U('withdraw_stock'), value = 'get_stock'}
 	}
@@ -137,8 +137,10 @@ function OpenMechanicActionsMenu()
 			else
 
 				local elements = {
-					{label = _U('flat_bed'),  value = 'flatbed'},
-					{label = _U('tow_truck'), value = 'towtruck2'}
+					--{label = _U('flat_bed'),  value = 'flatbed'},
+					{label = _U('flat_bed2'),  value = 'flatbed2'},
+					{label = _U('flat_bed3'),  value = 'flatbed3'}
+					--{label = _U('tow_truck'), value = 'towtruck2'}
 				}
 
 				if Config.EnablePlayerManagement and ESX.PlayerData.job and (ESX.PlayerData.job.grade_name == 'boss' or ESX.PlayerData.job.grade_name == 'chef' or ESX.PlayerData.job.grade_name == 'experimente') then
@@ -303,8 +305,8 @@ function OpenMobileMechanicActionsMenu()
 			{label = _U('hijack'),        value = 'hijack_vehicle'},
 			{label = _U('repair'),        value = 'fix_vehicle'},
 			{label = _U('clean'),         value = 'clean_vehicle'},
-			{label = _U('imp_veh'),       value = 'del_vehicle'},
-			{label = _U('flat_bed'),      value = 'dep_vehicle'},
+			--{label = _U('imp_veh'),       value = 'del_vehicle'},
+			--{label = _U('flat_bed'),      value = 'dep_vehicle'},
 			{label = _U('place_objects'), value = 'object_spawner'}
 		}
 	}, function(data, menu)
@@ -1013,8 +1015,10 @@ Citizen.CreateThread(function()
 					else
 
 						if
-							GetEntityModel(vehicle) == GetHashKey('flatbed')   or
-							GetEntityModel(vehicle) == GetHashKey('towtruck2') or
+							--GetEntityModel(vehicle) == GetHashKey('flatbed')   or
+							GetEntityModel(vehicle) == GetHashKey('flatbed2') or
+							GetEntityModel(vehicle) == GetHashKey('flatbed3') or
+							--GetEntityModel(vehicle) == GetHashKey('towtruck2') or
 							GetEntityModel(vehicle) == GetHashKey('slamvan3')
 						then
 							TriggerServerEvent('esx_service:disableService', 'mechanic')

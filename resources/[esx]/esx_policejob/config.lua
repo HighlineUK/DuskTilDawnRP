@@ -143,22 +143,23 @@ Config.AuthorizedWeapons = {
 
 Config.AuthorizedVehicles = {
 	Shared = {
-		{ model = 'pbus', label = 'LSPD Prison Bus', price = 5000 },
-		{ model = 'police3', label = 'LSPD Interceptor', price = 20000 }
+		{ model = 'police3', label = 'LSPD Interceptor', price = 2500 }
 	},
 
 	recruit = {
-
+		{ model = 'police3', label = 'LSPD Interceptor', price = 2500 }
 	},
 
 	officer = {
-		{ model = 'police3', label = 'LSPD Interceptor', price = 20000 }
+		{ model = 'police2', label = 'LSPD Jackal', price = 7500 },
+		{ model = 'policeb', label = 'LSPD Bike', price = 5000 }
 	},
 
 	sergeant = {
 		{ model = 'policet', label = 'LSPD Transporter', price = 18500 },
 		{ model = 'police', label = 'LSPD MercAMG', price = 10000 },
-		{ model = 'policeb', label = 'LSPD Bike', price = 30500 }
+		{ model = 'police2', label = 'LSPD Jackal', price = 20000 },
+		{ model = 'pbus', label = 'LSPD Prison Bus', price = 5000 }
 	},
 
 	intendent = {
@@ -167,16 +168,21 @@ Config.AuthorizedVehicles = {
 
 	lieutenant = {
 		--{ model = 'police2', label = 'Police Charger14', price = 10 },
+		{ model = 'policet', label = 'LSPD Transporter', price = 18500 },
 		{ model = 'polschafter3', label = 'LSPD ShafterUC', price = 10 },
 		{ model = 'police', label = 'LSPD MercAMG', price = 10 },
+		{ model = 'police2', label = 'LSPD Jackal', price = 20000 },
 		{ model = 'police3', label = 'LSPD Interceptor', price = 20000 },
 		{ model = 'policeb', label = 'LSPD MBike', price = 10 }
 	},
 
 	cheif = {
 		--{ model = 'police2', label = 'Police Charger14', price = 10 },
+		{ model = 'pbus', label = 'LSPD Prison Bus', price = 5000 },
+		{ model = 'policet', label = 'LSPD Transporter', price = 18500 },
 		{ model = 'polschafter3', label = 'LSPD ShafterUC', price = 10 },
 		{ model = 'police', label = 'LSPD MercAMG', price = 10 },
+		{ model = 'police2', label = 'LSPD Jackal', price = 20000 },
 		{ model = 'police3', label = 'LSPD Interceptor', price = 20 },
 		{ model = 'policeb', label = 'LSPD Bike', price = 10 }
 		
@@ -184,8 +190,11 @@ Config.AuthorizedVehicles = {
 
 	boss = {
 		--{ model = 'police2', label = 'Police Charger14', price = 10 },
+		{ model = 'pbus', label = 'LSPD Prison Bus', price = 10 },
+		{ model = 'policet', label = 'LSPD Transporter', price = 10 },
 		{ model = 'polschafter3', label = 'LSPD ShafterUC', price = 10 },
 		{ model = 'police', label = 'LSPD MercAMG', price = 10 },
+		{ model = 'police2', label = 'LSPD Jackal', price = 10 },
 		{ model = 'police3', label = 'LSPD Interceptor', price = 20 },
 		{ model = 'policeb', label = 'LSPD Bike', price = 10 }
 
