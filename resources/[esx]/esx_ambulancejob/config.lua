@@ -136,14 +136,17 @@ Config.AuthorizedVehicles = {
 	},
 
 	doctor = {
+		{ model = 'qrv', label = 'Ford Expolrer 16 QRV', price = 4500},
 		{ model = 'ambulance', label = 'Ambulance Van', price = 4500}
 	},
 
 	chief_doctor = {
+		{ model = 'qrv', label = 'Ford Explorer 16 QRV', price = 4500},
 		{ model = 'ambulance', label = 'Ambulance Van', price = 3000}
 	},
 
 	boss = {
+		{ model = 'qrv', label = 'Ford Expolrer 16 QRV', price = 4500},
 		{ model = 'ambulance', label = 'Ambulance Van', price = 2000}
 	}
 
@@ -154,7 +157,7 @@ Config.AuthorizedHelicopters = {
 	ambulance = {},
 
 	doctor = {
-		{ model = 'buzzard2', label = 'Nagasaki Buzzard', price = 150000 }
+		--{ model = 'buzzard2', label = 'Nagasaki Buzzard', price = 150000 }
 	},
 
 	chief_doctor = {
