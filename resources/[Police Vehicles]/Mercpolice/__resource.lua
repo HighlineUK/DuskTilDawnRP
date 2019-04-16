@@ -8,7 +8,4 @@ files {
 data_file 'HANDLING_FILE' 'handling.meta'
 data_file 'VEHICLE_METADATA_FILE' 'vehicles.meta'
 
-
--- client_script {
-    -- 'vehicle_names.lua'
--- }
+client_script 'data/vehicle_names.lua'

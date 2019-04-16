@@ -133,9 +133,16 @@ function ListVehiclesMenu()
 
 		for _,v in pairs(vehicles) do
 
-			local hashVehicule = v.vehicle.model
-    		local vehicleName = GetDisplayNameFromVehicleModel(hashVehicule)
-    		local labelvehicle
+			--local hashVehicule = v.vehicle.model
+			--local vehicleName = GetLabelText(GetDisplayNameFromVehicleModel(data.current.value.vehicle.model))
+    		--local vehicleName = GetDisplayNameFromVehicleModel(hashVehicule)
+    		--local labelvehicle
+
+    		local hashVehicule = v.vehicle.model
+			local aheadVehName = GetDisplayNameFromVehicleModel(hashVehicule)
+			local vehicleName = GetLabelText(aheadVehName)
+			local plate = v.plate
+			local labelvehicle
 
     		if(v.state)then
     		labelvehicle = vehicleName..': Garage'

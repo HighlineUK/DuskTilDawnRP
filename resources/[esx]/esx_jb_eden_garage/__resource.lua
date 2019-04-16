@@ -5,5 +5,6 @@ server_scripts {
 }
 client_script {
 	'config.lua',
-	'client.lua'
+	'client.lua',
+	'emsfpiu/data/vehicle_names.lua'
 }

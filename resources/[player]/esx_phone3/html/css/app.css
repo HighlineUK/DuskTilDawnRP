@@ -342,7 +342,7 @@ body {
 	position: absolute;
 	text-align: center;
 	top: 25%;
-	font-size: 2em;
+	font-size: 1.2em; /* 2em */
 	width: 100%;
 }
 
@@ -350,7 +350,7 @@ body {
 	position: absolute;
 	text-align: center;
 	top: 35%;
-	font-size: 2em;
+	font-size: 1.2em; /* 2em */
 	width: 100%;
 }
 
