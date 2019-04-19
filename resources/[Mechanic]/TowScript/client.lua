@@ -8,6 +8,33 @@
 -- These vehicles will be registered as "allowed/valid" tow trucks.
 -- Change the x, y and z offset values for the towed vehicles to be attached to the tow truck.
 -- x = left/right, y = forwards/backwards, z = up/down
+
+ESX                           = nil
+local PlayerData              = {}
+
+
+
+Citizen.CreateThread(function()
+    while ESX == nil do
+        TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+        Citizen.Wait(0)
+    end
+
+    while ESX.GetPlayerData().job == nil do
+        Citizen.Wait(10)
+    end
+
+    PlayerData = ESX.GetPlayerData()
+end)
+
+RegisterNetEvent("esx:setJob")
+AddEventHandler("esx:setJob", function(job)
+        PlayerData.job = job
+end)
+--End--
+
+
+
 local allowedTowModels = { 
     --['flatbed'] = {x = 0.0, y = -0.85, z = 1.25}, -- default GTA V flatbed
     ['flatbed2'] = {x = 0.0, y = 0.0, z = 0.63}, -- addon flatbed2
@@ -24,9 +51,18 @@ local allowTowingTrailers = true -- Disables trailers. NOTE: THIS ALSO DISABLES 
 
 local currentlyTowedVehicle = nil
 
+--Command Permission--
 RegisterCommand("tow", function()
+    if PlayerData.job ~= nil then
+        if PlayerData.job.name == 'police' or PlayerData.job.name == 'ambulance' or PlayerData.job.name == 'mechanic'then
+        ---if PlayerData.job.name == 'mecano'then--
 	TriggerEvent("tow")
+    else
+            ESX.ShowNotification('~o~~h~Tow Service:~n~~s~You do not have permission to execute this command!')
+        end
+    end
 end,false)
+--END--
 
 
 
