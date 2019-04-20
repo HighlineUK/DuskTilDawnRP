@@ -465,6 +465,81 @@ ESX.RegisterServerCallback('esx_vehicleshop:retrieveJobVehicles', function (sour
 	end)
 end)
 
+--type in chat /transfervehicle <player-id number> "car plate"
+--Example /transfervehicle 1 "ABC 123" will transfer the car with plate "ABC 123" to the player 
+-- who has the id 1 (the player of course needs to be online)
+
+RegisterCommand('transfervehicle', function(source, args)
+
+	
+	myself = source
+	other = args[1]
+	
+	if(GetPlayerName(tonumber(args[1])))then
+			
+	else
+			
+            TriggerClientEvent('chatMessage', source, "SYSTEM", {255, 0, 0}, "Incorrect player ID!")
+			return
+	end
+	
+	
+	local plate1 = args[2]
+	local plate2 = args[3]
+	local plate3 = args[4]
+	local plate4 = args[5]
+	
+  
+	if plate1 ~= nil then plate01 = plate1 else plate01 = "" end
+	if plate2 ~= nil then plate02 = plate2 else plate02 = "" end
+	if plate3 ~= nil then plate03 = plate3 else plate03 = "" end
+	if plate4 ~= nil then plate04 = plate4 else plate04 = "" end
+  
+  
+	local plate = (plate01 .. " " .. plate02 .. " " .. plate03 .. " " .. plate04)
+
+	
+	mySteamID = GetPlayerIdentifiers(source)
+	mySteam = mySteamID[1]
+	myID = ESX.GetPlayerFromId(source).identifier
+	myName = ESX.GetPlayerFromId(source).name
+
+	targetSteamID = GetPlayerIdentifiers(args[1])
+	targetSteamName = ESX.GetPlayerFromId(args[1]).name
+	targetSteam = targetSteamID[1]
+	
+	MySQL.Async.fetchAll(
+        'SELECT * FROM owned_vehicles WHERE plate = @plate',
+        {
+            ['@plate'] = plate
+        },
+        function(result)
+            if result[1] ~= nil then
+                local playerName = ESX.GetPlayerFromIdentifier(result[1].owner).identifier
+				local pName = ESX.GetPlayerFromIdentifier(result[1].owner).name
+				CarOwner = playerName
+				print("Car Transfer ", myID, CarOwner)
+				if myID == CarOwner then
+					print("Transfered")
+					
+					data = {}
+						TriggerClientEvent('chatMessage', other, "^4Vehicle with the plate ^*^1" .. plate .. "^r^4was transfered to you by: ^*^2" .. myName)
+			 
+						MySQL.Sync.execute("UPDATE owned_vehicles SET owner=@owner WHERE plate=@plate", {['@owner'] = targetSteam, ['@plate'] = plate})
+						TriggerClientEvent('chatMessage', source, "^4You have ^*^3transfered^0^4 your vehicle with the plate ^*^1" .. plate .. "\" ^r^4to ^*^2".. targetSteamName)
+				else
+					print("Did not transfer")
+					TriggerClientEvent('chatMessage', source, "^*^1You do not own the vehicle")
+				end
+			else
+				TriggerClientEvent('chatMessage', source, "^1^*ERROR: ^r^0This vehicle plate does not exist or the plate was incorrectly written.")
+            end
+		
+        end
+    )
+	
+end)
+
 RegisterServerEvent('esx_vehicleshop:setJobVehicleState')
 AddEventHandler('esx_vehicleshop:setJobVehicleState', function(plate, state)
 	local xPlayer = ESX.GetPlayerFromId(source)
