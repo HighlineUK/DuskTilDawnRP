@@ -150,6 +150,9 @@ function UpdateMods(data)
 		end
 
 		props[data.modType] = data.modNum
+		if data.modType == 'modFrontWheels' then
+			props['modBackWheels'] = data.modNum
+		end
 		ESX.Game.SetVehicleProperties(vehicle, props)
 	end
 end

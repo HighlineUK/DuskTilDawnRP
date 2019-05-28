@@ -26,7 +26,7 @@ Locales['en'] = {
   ['gave_account_money'] = 'you gave ~g~$%s~s~ (%s) to ~y~%s~s~',
   ['received_account_money'] = 'you received ~g~$%s~s~ (%s) from ~b~%s~s~',
   ['amount_invalid'] = 'invalid amount',
-  ['players_nearby'] = 'no citizens nearby',
+  ['players_nearby'] = 'no players nearby',
   ['ex_inv_lim'] = 'action not possible, exceeding inventory limit for ~y~%s~s~',
   ['imp_invalid_quantity'] = 'action impossible, invalid quantity',
   ['imp_invalid_amount'] = 'action impossible, invalid amount',
@@ -49,7 +49,7 @@ Locales['en'] = {
 
   -- Commands
   ['setjob'] = 'assign a job to a user',
-  ['id_param'] = 'the ID of the citizen',
+  ['id_param'] = 'the ID of the player',
   ['setjob_param2'] = 'the job you wish to assign',
   ['setjob_param3'] = 'the job level',
   ['load_ipl'] = 'load IPL',
@@ -63,7 +63,7 @@ Locales['en'] = {
   ['spawn_ped'] = 'spawn ped',
   ['spawn_ped_param'] = 'example a_m_m_hillbilly_01',
   ['givemoney'] = 'give money',
-  ['setmoney'] = 'set money for a citizen',
+  ['setmoney'] = 'set money for a player',
   ['money_type'] = 'valid money types: cash, bank, black',
   ['money_set'] = 'someone ~y~highly ranked~s~ just set ~g~$%s~s~ (%s) for you!',
   ['money_amount'] = 'amount of money',
