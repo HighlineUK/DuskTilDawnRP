@@ -409,7 +409,7 @@ function OpenGatewayAvailablePropertiesMenu(property)
 			title    = property.label .. ' - ' .. _U('available_properties'),
 			align    = 'top-left',
 			elements = {
-				{label = _U('buy'), value = 'buy'},
+				--{label = _U('buy'), value = 'buy'},
 				{label = _U('rent'), value = 'rent'},
 				{label = _U('visit'), value = 'visit'}
 			}
